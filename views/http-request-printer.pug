@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1= 'http-request-printer'
+    p Method: #{method}
+    p URL: #{url}
+    p Version: #{httpVersion}
+    p Headers:
+        each val, index in {accept: headers.accept,acceptEncoding: headers.accept-encoding,acceptLanguage: headers.accept-language,cacheControl: headers.cache-control,connection:headers.connection,host:headers.host,ifNoneMatch:headers.if-none-match,upgradeInsecureRequests:headers.upgrade-insecure-requests,userAgent:headers.user-agent}
+            li= index + ': ' + val
+    p Query:
+        each val, index in {query: query.id}
+            li= index + ': ' + val
