@@ -4,7 +4,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('http-request-printer', {method: req.method, url: req.baseUrl, headers: req.headers, httpVersion: req.httpVersion, httpQuery: req.query});
+    res.render('http-request-printer', {
+        method: req.method,
+        url: req.baseUrl,
+        headers: req.headers,
+        httpVersion: req.httpVersion,
+        httpQuery: req.query
+    });
 });
 
 
