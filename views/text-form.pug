@@ -14,3 +14,27 @@ block content
         br
         br
         input(type='submit' value='Submit')
+
+    if wordTokens
+        if wordTokens.length > 1
+           p There are #{wordTokens.length} words in this text
+        else
+           p There is #{wordTokens.length} word in this text
+    if userText
+        if userText.length > 1
+           p There are #{userText.length} symbols in this text
+        else
+           p There is #{userText.length} symbol in this text
+    if symbolTokens
+        if symbolTokens > 1
+           p There are #{symbolTokens.length} visible symbols in this text
+        else
+           p There is #{symbolTokens.length} visible symbol in this text
+    if sentences
+        if sentences.length > 1
+           p There are #{sentences.length -1} sentences in this text
+        else if sentences.length <=1
+           p There is no submitted complite sentence
+        else
+           p There is #{sentences.length - 1} sentence in this text
+
