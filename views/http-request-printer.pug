@@ -1,13 +1,14 @@
 extends layout
 
 block content
-    h1= 'http-request-printer'
+    h1= 'http request printer'
     p Method: #{method}
     p URL: #{url}
-    p Version: #{httpVersion}
+    p httpVersion: #{httpVersion}
     p Headers:
         each val, index in headers
             li= index + ': ' + val
-    p Query:
-        each val, index in httpQuery
-            li= index + ': ' + val
+    if(httpQuery)
+      p Query:
+          each val, index in httpQuery
+              li= index + ': ' + val

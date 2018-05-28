@@ -1,0 +1,11 @@
+extends layout
+
+block content
+
+
+
+    form(action='test-jserver' target='_self'  method='POST')
+      input(type='submit', value='Test java server!').btn
+
+    if(responseString)
+       p Server responded: #{responseString}
