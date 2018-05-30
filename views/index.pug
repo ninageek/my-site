@@ -3,6 +3,19 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  .row
+    .col.s12.m7
+      .card.hoverable
+        .card-image
+          img(src='images/Fuji.jpg')
+          span.card-title Fuji
+        .card-content
+          p
+            | My name is Nina.
+            | I'm learning how to code.
+        .card-action
+          a(href='#') This is a link
+
   | Hey, check out
   a(href="/http-request-printer")  this page
   br
