@@ -3,7 +3,7 @@ extends layout
 block content
   h1 Welcome to #{title}
   .row
-    .col.s12.m6
+    .col.s6
       .card.hoverable
         .card-image
           img(src='images/Fuji.jpg')
@@ -14,12 +14,50 @@ block content
             | I'm learning how to code.
         .card-action
           a(href='#') This is a link
+      // Grey navigation panel
 
-  | Hey, check out
-  a(href="/http-request-printer")  this page
-  br
-  | Text Parser
-  a(href="/text-form")  here
-  br
-  | Test java server
-  a(href="/test-jserver")  here
+    .col.s6
+      .card.hoverable.blue-grey.darken-1b
+        .card-content.white-text
+          span.card-title Some of my projects
+          p
+            | I am a very simple card. I am good at containing small bits of information.
+            | I am convenient because I require little markup to use effectively.
+        .card-action
+          a(href='#') This is a link
+          a(href='#') This is a link
+      .card.hoverable.blue-grey.darken-1
+        .card-content.white-text
+          span.card-title My GitHub
+          p
+            | I am a very simple card. I am good at containing small bits of information.
+            | I am convenient because I require little markup to use effectively.
+        .card-action
+          a(href='https://github.com/Never2l8') This is a link
+
+      .card.hoverable.blue-grey.darken-1
+        .card-content.white-text
+          span.card-title Contact me
+          p
+            | I am a very simple card. I am good at containing small bits of information.
+            | I am convenient because I require little markup to use effectively.
+        .card-action
+          a(href='#') This is a link
+          a(href='#') This is a link
+
+
+
+      | Hey, check out
+      a(href="/http-request-printer")  this page
+      br
+      | Text Parser
+      a(href="/text-form")  here
+      br
+      | Test java server
+      a(href="/test-jserver")  here
+      // Teal page content
+
+
+
+
+
