@@ -1,11 +1,13 @@
 extends layout
 
 block content
+    p
+    | Click the button!
 
 
 
     form(action='test-jserver' target='_self'  method='POST')
-      input(type='submit', value='Test java server!').btn
+      input(type='submit', value='Test java server!').btn.blue-grey.darken-1b.waves-effect.waves-blue-grey.darken-1b
 
     if(responseString)
        p Server responded: #{responseString}
