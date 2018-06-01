@@ -6,3 +6,6 @@ body {
 a {
   color: #00B7FF;
 }
+a.my-logo {
+  padding-left: 25px;
+}

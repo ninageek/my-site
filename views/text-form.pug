@@ -4,36 +4,44 @@ extends layout
 
 block content
 
+    .row
+        .col.s6.m6
+            .card.transparent.hoverable
+                .card-content.blue-grey-text
+                    span.card-title Text Parser
 
-    h2 Text Parser
-    form(action='/text-form' target='_self'  method='POST')
-        | Enter your text and after clicking the submit button you will find out how many symbols, words and sentences are in your text:
-        br
-        textarea.textarea1.materialize-textarea(name='message' rows='10' cols='30')=userText
-        br
-        br
-        input.btn.blue-grey.darken-1b.waves-effect.waves-blue-grey.darken-1b(type='submit' value='Submit')
+                    form(action='/text-form' target='_self'  method='POST')
+                        | Enter your text and after clicking the submit button you will find out how many symbols, words and sentences are in your text:
+                        br
+                        textarea.textarea1.materialize-textarea(name='message' rows='10' cols='30')=userText
+                        br
+                        br
+                        input.btn.blue-grey.darken-1b.waves-effect.waves-blue-grey.darken-1b(type='submit' value='Submit')
+        .col.s6.m6
+            .card.transparent.hoverable
+                .card-content.blue-grey-text
+                    span.card-title Parsing result:
 
-    if wordTokens
-        if wordTokens.length > 1
-           p There are #{wordTokens.length} words in this text
-        else
-           p There is #{wordTokens.length} word in this text
-    if userText
-        if userText.length > 1
-           p There are #{userText.length} symbols in this text
-        else
-           p There is #{userText.length} symbol in this text
-    if symbolTokens
-        if symbolTokens > 1
-           p There are #{symbolTokens.length} visible symbols in this text
-        else
-           p There is #{symbolTokens.length} visible symbol in this text
-    if sentences
-        if sentences.length > 1
-           p There are #{sentences.length -1} sentences in this text
-        else if sentences.length <=1
-           p There is no submitted complite sentence
-        else
-           p There is #{sentences.length - 1} sentence in this text
+                    if wordTokens
+                        if wordTokens.length > 1
+                           p There are #{wordTokens.length} words in this text
+                        else
+                           p There is #{wordTokens.length} word in this text
+                    if userText
+                        if userText.length > 1
+                           p There are #{userText.length} symbols in this text
+                        else
+                           p There is #{userText.length} symbol in this text
+                    if symbolTokens
+                        if symbolTokens > 1
+                           p There are #{symbolTokens.length} visible symbols in this text
+                        else
+                           p There is #{symbolTokens.length} visible symbol in this text
+                    if sentences
+                        if sentences.length > 1
+                           p There are #{sentences.length -1} sentences in this text
+                        else if sentences.length <=1
+                           p There is no submitted complite sentence
+                        else
+                           p There is #{sentences.length - 1} sentence in this text
 
