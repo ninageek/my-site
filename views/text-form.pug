@@ -1,4 +1,3 @@
-
 extends layout
 
 
@@ -23,26 +22,27 @@ block content
                     span.card-title Parsing result:
 
 
-                    if userText
+                    if method === "post" && userText.length >= 1
                         if userText.length > 1
-                           p There are #{userText.length} symbols in this text
+                            p There are #{userText.length} symbols in this text
                         else
-                           p There is #{userText.length} symbol in this text
-                    if symbolTokens
-                        if symbolTokens.length > 1
-                           p There are #{symbolTokens.length} visible symbols in this text
-                        else
-                           p There is #{symbolTokens.length} visible symbol in this text
-                    if wordTokens
-                        if wordTokens.length > 1
-                            p There are #{wordTokens.length} words in this text
-                        else
-                            p There is #{wordTokens.length} word in this text
-                    if sentences
-                        if sentences.length > 2
-                           p There are #{sentences.length -1} sentences in this text
-                        else if sentences.length <=1
-                           p There is no submitted complite sentence
-                        else
-                           p There is #{sentences.length - 1} sentence in this text
-
+                            p There is #{userText.length} symbol in this text
+                        if symbolTokens
+                            if symbolTokens.length > 1
+                                p There are #{symbolTokens.length} visible symbols in this text
+                            else
+                                p There is #{symbolTokens.length} visible symbol in this text
+                        if wordTokens
+                            if wordTokens.length > 1
+                                p There are #{wordTokens.length} words in this text
+                            else
+                                p There is #{wordTokens.length} word in this text
+                        if sentences
+                            if sentences.length > 2
+                                p There are #{sentences.length - 1} sentences in this text
+                            else if sentences.length <= 1
+                                p There is no submitted complite sentence
+                            else
+                                p There is #{sentences.length - 1} sentence in this text
+                    else if method === "post"
+                        p You submitted empty form.

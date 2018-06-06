@@ -25,7 +25,8 @@ router.post('/', function (req, res, next) {
         userText: req.body.message,
         wordTokens: req.body.message.split(' '),
         symbolTokens: req.body.message.split(/\s*/),
-        sentences: sentences
+        sentences: sentences,
+        method:"post"
     });
 
 });
