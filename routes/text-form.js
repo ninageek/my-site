@@ -7,9 +7,15 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
+
+    res.render('text-form',processRequest(req));
+
+});
+
+function processRequest(req) {
     console.log(req.body);
     let userText = req.body.message;
-    let textToParse = req.body.message.replace(/\r\n?|\n/g, '').replace(/\s\s+/g, ' ').replace (/^ /, '').replace (/ $/, '');
+    let textToParse = req.body.message.replace(/\r\n?|\n/g, '').replace(/\s\s+/g, ' ').replace(/^ /, '').replace(/ $/, '');
 
     function splitMulti(str, tokens) {
         let tempChar = tokens[0];
@@ -21,16 +27,19 @@ router.post('/', function (req, res, next) {
     }
 
     let sentences = splitMulti(userText, ['.', '!', '?', '...']);
-    res.render('text-form', {
+    let wordTokens=textToParse.split(' ');
+    let wordTokensCount = wordTokens.length;
+    if(wordTokensCount ===1 && wordTokens[0]==="") wordTokensCount=0;
+
+
+    return {
         title: 'text-form',
         userText: req.body.message,
-        wordTokens: textToParse.split(' '),
+        wordTokens: wordTokensCount,
         visibleSymbols: textToParse.split(/\s*/),
         sentences: sentences,
         method: "post"
-    });
-
-});
-
+    }
+}
 
 module.exports = router;
