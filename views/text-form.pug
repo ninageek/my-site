@@ -27,11 +27,11 @@ block content
                             p There are #{userText.length} symbols in this text
                         else
                             p There is #{userText.length} symbol in this text
-                        if symbolTokens
-                            if symbolTokens.length > 1
-                                p There are #{symbolTokens.length} visible symbols in this text
+                        if visibleSymbols
+                            if visibleSymbols.length > 1
+                                p There are #{visibleSymbols.length} visible symbols in this text
                             else
-                                p There is #{symbolTokens.length} visible symbol in this text
+                                p There is #{visibleSymbols.length} visible symbol in this text
                         if wordTokens
                             if wordTokens.length > 1
                                 p There are #{wordTokens.length} words in this text

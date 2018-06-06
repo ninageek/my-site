@@ -1,17 +1,17 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var bodyParser = require("body-parser");
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
+let bodyParser = require("body-parser");
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var http = require('./routes/http-request-printer');
-var textForm = require('./routes/text-form');
-var testJserver = require('./routes/test-jserver');
-var myProjects = require('./routes/my-projects');
-var app = express();
+let indexRouter = require('./routes/index');
+let usersRouter = require('./routes/users');
+let http = require('./routes/http-request-printer');
+let textForm = require('./routes/text-form');
+let testJserver = require('./routes/test-jserver');
+let myProjects = require('./routes/my-projects');
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
