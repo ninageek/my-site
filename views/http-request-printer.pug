@@ -1,14 +1,22 @@
 extends layout
 
 block content
-    h1= 'HTTP request printer'
-    p Method: #{method}
-    p URL: #{url}
-    p httpVersion: #{httpVersion}
-    p Headers:
-        each val, index in headers
-            li= index + ': ' + val
-    if(httpQuery)
-      p Query:
-          each val, index in httpQuery
-              li= index + ': ' + val
+    .row
+        .col.s6.m6
+            .card.transparent.hoverable
+                .card-content.blue-grey-text
+                    span.card-title HTTP request printer
+                    p Method: #{method}
+                    br
+                    p URL: #{url}
+                    br
+                    p httpVersion: #{httpVersion}
+                    br
+                    p Headers:
+                        each val, index in headers
+                           li= index + ': ' + val
+                    if(httpQuery)
+                     br
+                     p Query:
+                          each val, index in httpQuery
+                              li= index + ': ' + val
