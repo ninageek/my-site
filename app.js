@@ -11,6 +11,8 @@ let http = require('./routes/http-request-printer');
 let textForm = require('./routes/text-form');
 let testJserver = require('./routes/test-jserver');
 let myProjects = require('./routes/my-projects');
+let stringChecker = require('./routes/string-checker');
+let eulersNumber = require('./routes/eulers-number');
 let app = express();
 
 // view engine setup
@@ -32,6 +34,8 @@ app.use('/http-request-printer', http);
 app.use('/text-form', textForm );
 app.use('/test-jserver', testJserver );
 app.use('/my-projects', myProjects);
+app.use('/string-checker', stringChecker);
+app.use('/eulers-number', eulersNumber);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

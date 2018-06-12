@@ -10,9 +10,11 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-    fetch('http://localhost:8080/api/test-jserver')
+    fetch('http://localhost:8080/api/test-jserver',{method:'GET', headers: {}, body: null, timeout: 2000})
         .then(res => res.text())
-        .then(responseString => res.render('test-jserver', {responseString: responseString}));
+        .catch(error => res.render('test-jserver',{responseString:"Server is not available"}))
+        .then(responseString => res.render('test-jserver', {responseString: responseString}))
+
 });
 
 

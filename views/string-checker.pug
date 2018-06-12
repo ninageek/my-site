@@ -1,0 +1,45 @@
+extends layout
+
+
+block content
+
+    .row
+        .col.s6.m6
+            .card.transparent.hoverable
+                .card-content.blue-grey-text
+                    span.card-title String checker
+                    form(action='/string-checker' target='_self'  method='POST')
+                        | Enter your first string:
+                        br
+                        textarea.textarea1.materialize-textarea(name='firstString' rows='10' cols='30')=firstString
+                        br
+                        br
+                        | Enter your second string:
+                        br
+                        textarea.textarea1.materialize-textarea(name='secondString' rows='10' cols='30')=secondString
+                        br
+                        br
+                        input.btn.blue-grey.darken-1b.waves-effect.waves-blue-grey.darken-1b(type='submit' value='Submit')
+
+
+        .col.s6.m6
+            .card.transparent.hoverable
+                .card-content.blue-grey-text
+                    span.card-title Checking result:
+                     if isFirstStringPalindrome
+                         p String #{firstString} is palindrome.
+                     else
+                         p String #{firstString} is not palindrome.
+                     if isSecondStringPalindrome
+                         p String #{secondString} is palindrome.
+                     else
+                         p String #{secondString} is not palindrome.
+                     if permutationCheck
+                         p Strings #{firstString} and #{secondString} are permutations.
+                     else
+                         p Strings #{firstString} and #{secondString} are not permutations.
+                     if traverseCheck
+                         p Strings #{firstString} and #{secondString} are traversal.
+                     else
+                         p Strings #{firstString} and #{secondString} are not traversal.
+
