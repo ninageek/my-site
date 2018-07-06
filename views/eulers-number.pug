@@ -3,6 +3,7 @@ extends layout
 
 block content
 
+
     .row
         .col.s6.m6
             .card.transparent.hoverable
@@ -12,11 +13,18 @@ block content
                     form(action='/eulers-number' target='_self'  method='POST')
                         | Enter the number of digits of the Euler's number you want to see:
                         br
-                        input(type='number' name='quantity' min='1' max='1000')
+                        input(type='number' name='n' min='1' max='1000')
                         br
                         br
                         input.btn.blue-grey.darken-1b.waves-effect.waves-blue-grey.darken-1b(type='submit' value='Submit')
         .col.s6.m6
             .card.transparent.hoverable
-                .card-content.blue-grey-text
+                .card-content.blue-grey-text.euler
                     span.card-title Result:
+                    if response
+                        p#euler #{response.e}
+        .col.s6.m6
+            canvas#myCanvas(width='875' height='875' style='border:1px solid #d3d3d3;')
+                | Your browser does not support the canvas element.
+
+    script(src = '/js/eulers-number.js')

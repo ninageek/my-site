@@ -16,12 +16,14 @@ router.post('/', function (req, res, next) {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({firstString: req.body.firstString, secondString: req.body.secondString})
     })
-        .then(s =>
+        .then(res => res.json())
+        .then(json =>
             res.render('string-checker',
                 {
-                    responseString: s.text(),
+                    response: json,
                     firstString: req.body.firstString,
-                    secondString: req.body.secondString
+                    secondString: req.body.secondString,
+                    method:'POST'
                 }))
         .catch(err =>
             console.log(err)

@@ -38,7 +38,7 @@ function processRequest(req) {
         wordTokens: wordTokensCount,
         visibleSymbols: textToParse.split(/\s*/),
         sentences: sentences,
-        method: "post"
+        method: 'POST'
     }
 }
 

@@ -22,7 +22,7 @@ block content
                     span.card-title Parsing result:
 
 
-                    if method === "post" && userText.length >= 1
+                    if method === 'POST' && userText.length >= 1
                         if userText.length > 1
                             p There are #{userText.length} symbols in this text
                         else
@@ -44,5 +44,5 @@ block content
                                 p There is no submitted complite sentence
                             else
                                 p There is #{sentences.length - 1} sentence in this text
-                    else if method === "post"
-                        p You submitted empty form.
+                    else if method === 'POST'
+                        p You've submitted an empty form.

@@ -5,9 +5,12 @@ block content
         .col.s6.m6
             .card.transparent.hoverable
                 .card-content.blue-grey-text
-                    span.card-title HTTP request printer
+                    span.card-title
                     form(action='test-jserver' target='_self'  method='POST')
-                      input(type='submit', value='Test java server!').btn-large.blue-grey.darken-1b.waves-effect.waves-blue-grey.darken-1b
+                        input(type='submit', value='Test java server!').btn-large.blue-grey.darken-1b.waves-effect.waves-blue-grey.darken-1b
+        .col.s6.m6
+            .card.transparent.hoverable
+                .card-content.blue-grey-text
 
                     if(responseString)
-                       p Server responded: #{responseString}
+                        span.card-title  #{responseString}

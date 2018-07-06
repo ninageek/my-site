@@ -26,20 +26,23 @@ block content
             .card.transparent.hoverable
                 .card-content.blue-grey-text
                     span.card-title Checking result:
-                     if isFirstStringPalindrome
-                         p String #{firstString} is palindrome.
-                     else
-                         p String #{firstString} is not palindrome.
-                     if isSecondStringPalindrome
-                         p String #{secondString} is palindrome.
-                     else
-                         p String #{secondString} is not palindrome.
-                     if permutationCheck
-                         p Strings #{firstString} and #{secondString} are permutations.
-                     else
-                         p Strings #{firstString} and #{secondString} are not permutations.
-                     if traverseCheck
-                         p Strings #{firstString} and #{secondString} are traversal.
-                     else
-                         p Strings #{firstString} and #{secondString} are not traversal.
+                    if response && (!response.firstStringEmpty || !response.secondStringEmpty)
+                        if response.firstStringPalindrome
+                            p String #{firstString} is palindrome.
+                        else
+                            p String #{firstString} is not palindrome.
+                        if response.secondStringPalindrome
+                            p String #{secondString} is palindrome.
+                        else
+                            p String #{secondString} is not palindrome.
+                        if response.permutationCheck
+                            p Strings #{firstString} and #{secondString} are permutations.
+                        else
+                            p Strings #{firstString} and #{secondString} are not permutations.
+                        if response.traverseCheck
+                            p Strings #{firstString} and #{secondString} are traversal.
+                        else
+                            p Strings #{firstString} and #{secondString} are not traversal.
+                    else if method === 'POST'
+                        p You've send an empty string.
 
