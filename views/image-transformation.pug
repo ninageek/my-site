@@ -1,0 +1,31 @@
+extends layout
+
+
+block content
+
+    .row
+        .col.s6.m6
+            .card.transparent.hoverable
+                .card-content.blue-grey-text
+                    span.card-title Image Upload
+                    form(action='/image-rotation' target='_self'  method='POST' enctype='multipart/form-data')
+                        .file-field.input-field
+                            .btn.blue-grey.darken-1b.waves-effect
+                                span Image
+                                i.material-icons add_a_photo
+                                input(name='userImageUpload' type='file')
+                            .file-path-wrapper
+                                input.file-path.validate(type='text' placeholder='Upload your picture')
+                                br
+                                br
+                                input.btn.blue-grey.darken-1b.waves-effect(type='submit' value='Submit')
+        .col.s6.m6
+            if userImageUpload
+                .card
+                    .card-image
+                        img#image(src=userImageUpload)
+                        #rotateRight.btn.blue-grey.darken-1b.waves-effect rotate
+                            i.material-icons rotate_right
+                        #rotateLeft.btn.blue-grey.darken-1b.waves-effect rotate
+                            i.material-icons rotate_left
+    script(src = '/js/image-transformation.js')

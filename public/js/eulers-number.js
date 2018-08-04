@@ -13,7 +13,6 @@ const Y_POS = 432
 const R_LENGTH = 216
 const FONT_SIZE = R_LENGTH / 5
 const POINT_0 = new Point(432, 216)
-const POINT_5 = new Point(432, 648)
 const CIRCLE_CENTER = new Point(X_POS, Y_POS)
 ctx.beginPath()
 ctx.arc(X_POS, Y_POS, R_LENGTH, 0, 2 * Math.PI)
