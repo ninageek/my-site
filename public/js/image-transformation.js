@@ -1,9 +1,11 @@
 let userImageUpload = document.getElementById("image").src
 
 const rotateRight = () => callPostData('rotateRight')
+const rotateLeft = () => callPostData('rotateLeft')
+const transpose = () => callPostData('transpose')
 
 const callPostData = (transformation) => {
-    postData('/image-rotation/imageTransformation', {userImageUpload: userImageUpload, transformation: transformation})
+    postData('/image-transformation/transform', {userImageUpload: userImageUpload, transformation: transformation})
         .then(data => {
             let newData = data.substring(9)
             console.log(newData)
@@ -37,7 +39,13 @@ function reload(src) {
 const rotateRightBtn = document.getElementById('rotateRight')
 rotateRightBtn.addEventListener('click', rotateRight)
 
+const rotateLeftBtn = document.getElementById('rotateLeft')
+rotateLeftBtn.addEventListener('click', rotateLeft)
+
+const transposeBtn = document.getElementById('transpose')
+transposeBtn.addEventListener('click', transpose)
+
 window.onbeforeunload = () => {
-    postData('/image-rotation/delete', {userImageUpload: userImageUpload})
+    postData('/image-transformation/delete', {userImageUpload: userImageUpload})
 }
 

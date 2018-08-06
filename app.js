@@ -37,7 +37,7 @@ app.use('/test-jserver', testJserver )
 app.use('/my-projects', myProjects)
 app.use('/string-checker', stringChecker)
 app.use('/eulers-number', eulersNumber)
-app.use('/image-rotation', imageTransformation)
+app.use('/image-transformation', imageTransformation)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

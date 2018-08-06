@@ -8,7 +8,7 @@ block content
             .card.transparent.hoverable
                 .card-content.blue-grey-text
                     span.card-title Image Upload
-                    form(action='/image-rotation' target='_self'  method='POST' enctype='multipart/form-data')
+                    form(action='/image-transformation' target='_self'  method='POST' enctype='multipart/form-data')
                         .file-field.input-field
                             .btn.blue-grey.darken-1b.waves-effect
                                 span Image
@@ -28,4 +28,5 @@ block content
                             i.material-icons rotate_right
                         #rotateLeft.btn.blue-grey.darken-1b.waves-effect rotate
                             i.material-icons rotate_left
+                        #transpose.btn.blue-grey.darken-1b.waves-effect transpose
     script(src = '/js/image-transformation.js')

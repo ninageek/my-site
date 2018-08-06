@@ -17,8 +17,8 @@ let upload = multer({storage: storage}).array('userImageUpload', 1)
 
 
 router.get('/', function (req, res, next) {
-    res.render('image-rotation', {
-        title: 'image-rotation'
+    res.render('image-transformation', {
+        title: 'image-transformation'
     })
 
 })
@@ -28,10 +28,10 @@ router.post('/', function (req, res) {
             return res.end("Something went wrong!");
 
         }
-        res.render('image-rotation', {userImageUpload: res.req.files[0].path.substring(7)})
+        res.render('image-transformation', {userImageUpload: res.req.files[0].path.substring(7)})
     })
 })
-router.post('/imageTransformation', function (req, res) {
+router.post('/transform', function (req, res) {
     const path = "./public/" + req.body.userImageUpload.substring(22)
     const encodedImage = base64_encode(path)
     const transformation = req.body.transformation
