@@ -25,8 +25,7 @@ router.get('/', function (req, res, next) {
 router.post('/', function (req, res) {
     upload(req, res, function (err) {
         if (err) {
-            return res.end("Something went wrong!");
-
+            return res.end(JSON.stringify(err));
         }
         res.render('image-transformation', {userImageUpload: res.req.files[0].path.substring(7)})
     })
