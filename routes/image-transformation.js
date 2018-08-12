@@ -31,7 +31,7 @@ router.post('/', function (req, res) {
     })
 })
 router.post('/transform', function (req, res) {
-    const path = "./public/" + req.body.userImageUpload.substring(22)
+    const path = buildPath(req.body.userImageUpload)
     const encodedImage = base64_encode(path)
     const transformation = req.body.transformation
     const body = {
@@ -57,7 +57,7 @@ router.post('/transform', function (req, res) {
 })
 
 router.post('/delete', function (req, res) {
-    let path = "./public/" + req.body.userImageUpload.substring(22)
+    const path = buildPath(req.body.userImageUpload)
     fs.unlink(path, (error) => {
         if (error) {
             throw error;
@@ -77,6 +77,11 @@ function base64_encode(file) {
 function saveImage(image) {
     fs.writeFile(image.name, new Buffer(image.data, "base64"), function (err) {
     })
+}
+
+function buildPath(url) {
+    const index = url.indexOf("upload")
+    return "./public/" + url.substring(index)
 }
 
 module.exports = router
